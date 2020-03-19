@@ -1,0 +1,9 @@
+---
+# tasks file for Nagios
+- include_tasks: nagios-ubuntu.yml
+  when: ansible_os_family == 'Debian'
+
+- include_tasks: nagios-centos.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: nagios-plugin.yml

@@ -1,0 +1,20 @@
+- name: Download the plugin to temp folder
+  get_url:
+    dest: "{{ nagios_plugin_location }}"
+    url: "https://github.com/nagios-plugins/nagios-plugins/archive/release-{{ nagios_plugin_version }}.tar.gz"
+  tags:
+    - plugin
+- name: untar the plugin code
+  unarchive:
+    src: "{{ nagios_plugin_location }}"
+    dest: "/tmp/"
+  tags:
+    - plugin
+- name: Compile and Install
+  shell:
+    cmd: sudo ./tools/setup > setup.log && sudo ./configure > configue.log && sudo make > make.log && sudo make install
+  args:
+    chdir: "/tmp/nagios-plugins-release-{{ nagios_plugin_version }}/"
+  tags:
+    - plugin
+

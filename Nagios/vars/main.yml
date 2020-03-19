@@ -1,0 +1,49 @@
+---
+# vars file for Nagios
+  nagios_version: "4.4.5"
+  nagios_plugin_version: "2.2.1"
+  packages_ubuntu:
+    - autoconf
+    - gcc
+    - libc6
+    - make
+    - wget
+    - unzip
+    - apache2
+    - php
+    - libapache2-mod-php7.2
+    - libgd-dev
+    - libmcrypt-dev
+    - libssl-dev
+    - bc
+    - gawk
+    - dc
+    - build-essential
+    - snmp
+    - libnet-snmp-perl
+    - gettext
+    - python-pip
+  packages_centos:
+    - gcc
+    - glibc
+    - glibc-common
+    - wget
+    - unzip
+    - httpd
+    - php
+    - gd
+    - gd-devel
+    - perl
+    - postfix
+    - make
+    - gettext
+    - automake
+    - autoconf
+    - openssl-devel
+    - net-snmp
+    - net-snmp-utils
+    - epel-release
+    - perl-Net-SNMP
+    - python-pip
+  nagios_code_location: /tmp/nagioscore.tar.gz
+  nagios_plugin_location: /tmp/nagios-plugins.tar.gz
